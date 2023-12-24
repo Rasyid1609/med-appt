@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import AppointmentForm from "../AppoinmentForm/AppoinmentForm";
+import AppointmentForm from "../AppointmentForm/AppoinmentForm";
 import { v4 as uuidv4 } from 'uuid';
 import Popup from 'reactjs-popup';
 
@@ -12,7 +12,7 @@ const DoctorCard = ({ name, speciality, experience, clinic, ratings, profilePic}
     useEffect(() => {
         const storedAppointments = JSON.parse(localStorage.getItem(name));
         if (storedAppointments) {
-            setAppointments(storedAppointments);
+            storedAppointments(storedAppointments);
         }
     }, [name]);
 
@@ -118,4 +118,4 @@ const DoctorCard = ({ name, speciality, experience, clinic, ratings, profilePic}
   )
 }
 
-export default DoctorCard
+export default DoctorCard;
